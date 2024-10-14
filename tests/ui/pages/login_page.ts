@@ -30,6 +30,7 @@ export class LoginPage {
         this.loginFacebookButton.isVisible();
         this.loginGoogleButton.isVisible();
         this.passwordField.isEditable();
+   
     }
   
     async fillEmail(email: string) {
@@ -46,3 +47,5 @@ export class LoginPage {
     }
   
 }
+
+export default LoginPage;

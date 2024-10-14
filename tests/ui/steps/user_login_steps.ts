@@ -8,8 +8,8 @@ export class LoginSteps {
         this.loginPage = new LoginPage(page);
     }
 
-    async performLogin(username: string, password: string) {
+    async performLogin(email: string, password: string) {
         await this.loginPage.isPresent()
-        await this.loginPage.doLogin(username, password);
+        await this.loginPage.doLogin(email, password);
     }
 }
