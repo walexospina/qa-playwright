@@ -1,4 +1,5 @@
 import { Page, Locator, expect } from "@playwright/test";
+import { URLs } from "../../utils/urls";
 
 export class LoginPage {
   readonly page: Page;
@@ -29,15 +30,15 @@ export class LoginPage {
   }
 
   async open() {
-    await this.page.goto("https://academy.abaenglish.com/login");
+    await this.page.goto(URLs.login);
     await this.page.waitForURL("**/login");
   }
 
   async isPresent() {
-    this.loginSection.isVisible();
-    this.loginFacebookButton.isVisible();
-    this.loginGoogleButton.isVisible();
-    this.passwordField.isEditable();
+    await this.loginSection.isVisible();
+    await this.loginFacebookButton.isVisible();
+    await this.loginGoogleButton.isVisible();
+    await this.passwordField.isEditable();
   }
 
   async fillEmail(email: string) {
